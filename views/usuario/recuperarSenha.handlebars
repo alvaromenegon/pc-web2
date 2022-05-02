@@ -1,0 +1,18 @@
+<div class="form cad">
+    <form action="/recuperarSenha" method="post">
+        <div class="mb-3">
+            <label>Login:</label>
+            <input type="text" class="form-control" name="login" readonly value={{login}}>
+        </div>
+        <div class="mb-3">
+            <label>Pergunta Secreta:</label>
+            <input type="text" name="pergunta" readonly value="{{pergunta}}">
+        </div>
+        <div class="mb-3">
+            <label>Resposta: </label>
+            <input type="text" class="form-control" name="resposta">
+        </div>
+        <hr>
+        <input type="submit" class="btn btn-primary" value="Recuperar Senha">     
+    </form>
+</div>

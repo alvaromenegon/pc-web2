@@ -1,0 +1,25 @@
+<div class="form cad">
+    <form action="/usuarioEdit" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{{usuarios._id}}">
+        <div class="mb-3">
+            <label>Login:</label><input type="text" name="login" class="form-control" value="{{usuarios.login}}">
+        </div>
+        <div class="mb-3">
+            <label>Senha:</label><input type="password" class="form-control" value="{{usuarios.senha}}" name="senha">
+        </div>
+        <div class="mb-3">
+            <label>Pergunta Secreta</label>
+            <input type="text" class="form-control" name="pergunta_secreta" value="{{usuarios.pergunta_secreta}}">
+        </div>
+        <div class="mb-3">
+            <label>Resposta</label>
+            <input type="text" class="form-control" name="resposta_pergunta" value="{{usuarios.resposta_pergunta}}">
+        </div>
+        <div class="mb-3">
+            <label>Avatar:</label>
+            <input type="file" class="form-control" name="avatar">
+        </div>
+        <hr>
+        <input type="submit" class="btn btn-primary" value="Editar">     
+    </form>
+</div>

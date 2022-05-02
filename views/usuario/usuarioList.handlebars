@@ -1,0 +1,92 @@
+<table border="1px" class="table hidden-md">
+    <tr>
+        <td> Avatar </td>
+        <td> Login </td>
+        <td> Senha</td>
+        <td> Pergunta Secreta</td>
+        <td> Resposta Secreta</td>
+        <td> Editar Usuário</td>
+        <td> Excluir Usuário</td>
+    </tr>
+    {{#each usuarios}}
+    <tr>
+        <td><img width="50px" height="50px" src="uploads/{{avatar}}" alt="erro"></td>
+        <td>{{login}}</td>
+        <td>{{senha}}</td>
+        <td>{{pergunta_secreta}}</td>
+        <td>{{resposta_pergunta}}</td>
+        <td><a href="usuarioEdit/{{_id}}">Editar </a></td>
+        <td><input type="button" value="Excluir" class="btn btn-danger" data-bs-toggle="modal"
+                data-bs-target="#modalDelete_{{_id}}"></td>
+    </tr>
+
+    <div class="modal fade" id="modalDelete_{{_id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLiveLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLiveLabel">Confirmar Exclusão</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Confirma a exclusão do usuário <b>{{login}}</b>?</p>
+                    <a class="btn btn-danger" href="usuarioDelete/{{_id}}">Sim, excluir</a>
+                    <button data-bs-dismiss="modal" class="btn btn-primary">Não, voltar</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</table>
+{{#each usuarios}}
+<table border="1px" class="table show-md">
+    <th colspan="2">
+        <div class="navbar-dark rr-sb">
+            <button class="btn btn-secondary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#table-sm-{{login}}" aria-controls="table-sm-{{login}}" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="bi bi-arrows-angle-expand"></i>
+            </button>
+            Dados do Usuário: {{login}}
+        </div>
+    </th>
+    <tbody class="collapse" id="table-sm-{{login}}">
+        <tr>
+            <td>Avatar</td>
+            <td><a href="uploads/{{avatar}}" target="_blank"><img height="75px" width="75px"
+                        src="uploads/{{avatar}}"></a></td>
+        </tr>
+
+        <tr>
+            <td>Usuário</td>
+            <td>{{login}}</td>
+        </tr>
+        <tr>
+            <td>Senha</td>
+            <td>{{senha}}</td>
+        </tr>
+        <tr>
+            <td>Pergunta Secreta</td>
+            <td>{{pergunta_secreta}}</td>
+        </tr>
+        <tr>
+            <td>Resposta</td>
+            <td>{{resposta_pergunta}}</td>
+        </tr>
+        <tr>
+            <td>Editar</td>
+            <td><a href="usuarioEdit/{{_id}}">Editar </a></td>
+        </tr>
+        <tr>
+            <td>Excluir</td>
+            <td>
+                <input type="button" value="Excluir" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#modalDelete_{{_id}}">
+            </td>
+        </tr>
+    </tbody>
+</table>
+{{/each}}

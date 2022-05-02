@@ -1,0 +1,40 @@
+<div class="form cad">
+    <form action="/animalEdit" method="post" enctype="multipart/form-data">
+        <input type="hidden" style="margin:0px;padding:0%" name="id" value="{{animals._id}}">
+        <div class="mb-3">
+            <label>Nome:</label><input type="text" class="form-control" name="nome" value="{{animals.nome}}">
+        </div>
+        <div class="mb-3">
+            <label>Nome do Proprietário:</label><input type="text" class="form-control" name="nomeDoProprietario"
+                value="{{animals.nomeDoProprietario}}">
+        </div>
+        <div class="mb-3">
+            <label>Endereço:</label><input type="text" class="form-control" name="endereco"
+                value="{{animals.endereco}}">
+        </div>
+        <div class="mb-3">
+            <label for="datalistCadTipos" class="form-label">Tipo:</label>
+            <select class="form-control" name="tipo" id="datalistCadTipos">
+                <option selected>{{animals.tipo}}</option>
+                <option>Gato</option>
+                <option>Cachorro</option>
+                <option>Pássaro</option>
+                <option>Réptil</option>
+                <option>Peixe</option>
+                <option>Outro</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>Raça:</label><input type="text" class="form-control" name="raca" value="{{animals.raca}}">
+        </div>
+        <div class="mb-3">
+            <label>Foto:</label>
+            <input type="file" class="form-control" name="fotoAnimal">
+        </div>
+
+        <hr>
+        <center>
+            <button class="btn btn-primary" type="submit">Editar</button>
+        </center>
+    </form>
+</div>

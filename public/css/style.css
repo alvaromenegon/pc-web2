@@ -1,0 +1,71 @@
+*{
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.brand-name{
+    color: #5f9ea0 !important;;
+}
+.brand-name-bg-dark{
+    color: #afcfd0 !important;
+}
+
+.form-signin{
+    width: 100vw;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+a.logout{
+    color: #dc3545 !important;
+}
+
+a.logout:hover{
+    color: #bb2d3b !important;
+}
+
+td{
+    border: 1px solid #dddddd;
+    vertical-align: middle;
+}
+tr:nth-child(odd),th {
+    background-color: #dddddd80;
+}
+
+.forms{
+    max-width: 330px;
+    padding: 15px;
+}
+
+.form.cad{
+    max-width: 40vw;
+    min-width: 330px;
+    margin: auto;
+}
+
+.rr-sb{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+.hidden-md{
+    visibility: visible;
+}
+.show-md{
+   visibility: collapse;
+}
+
+@media only screen and ( max-width: 768px) {
+    .show-md{
+        visibility: visible;
+    }
+    .hidden-md{
+        visibility: collapse;
+    }
+
+}
+
+    
+
+

@@ -1,0 +1,97 @@
+<table border="1px" class="table hidden-md">
+    <tr>
+        <td>Foto</td>
+        <td>Nome do Animal</td>
+        <td>Nome do Proprietario</td>
+        <td>Endereço</td>
+        <td>Tipo</td>
+        <td>Raça</td>
+        <td colspan="2">Gerenciar</td>
+    </tr>
+
+    {{#each animals}}
+    <tr>
+        <td><img height="50px" width="50px" src="uploads/{{fotoAnimal}}"></td>
+        <td>{{nome}}</td>
+        <td>{{nomeDoProprietario}}</td>
+        <td>{{endereco}}</td>
+        <td>{{tipo}}</td>
+        <td>{{raca}}</td>
+        <td><a href="animalEdit/{{_id}}">Editar </a></td>
+        <td><input type="button" value="Excluir" class="btn btn-danger" data-bs-toggle="modal"
+                data-bs-target="#modalDelete_{{_id}}"></td>
+    </tr>
+    <div class="modal fade" id="modalDelete_{{_id}}" tabindex="-1" aria-labelledby="BackdropLiveLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="BackdropLiveLabel">Confirmar Exclusão</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Confirma a exclusão do animal <b>{{nome}}</b>?</p>
+                    <a class="btn btn-danger" href="animalDelete/{{_id}}">Sim, excluir</a>
+                    <button data-bs-dismiss="modal" class="btn btn-primary">Não, voltar</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</table>
+{{#each animals}}
+<table border="1px" class="table show-md">
+    <th colspan="2">
+        <div class="navbar-dark rr-sb">
+            <button class="btn btn-secondary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#table-sm-{{nome}}" aria-controls="table-sm-{{nome}}" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="bi bi-arrows-angle-expand"></i>
+            </button>
+            Dados do Animal: {{nome}}
+        </div>
+    </th>
+    <tbody class="collapse" id="table-sm-{{nome}}">
+        <tr>
+            <td>Foto</td>
+            <td><a href="uploads/{{fotoAnimal}}" target="_blank"><img height="75px" width="75px"
+                        src="uploads/{{fotoAnimal}}"></a></td>
+        </tr>
+
+        <tr>
+            <td>Animal</td>
+            <td>{{nome}}</td>
+        </tr>
+        <tr>
+            <td>Proprietario</td>
+            <td>{{nomeDoProprietario}}</td>
+        </tr>
+        <tr>
+            <td>Endereço</td>
+            <td>{{endereco}}</td>
+        </tr>
+        <tr>
+            <td>Tipo</td>
+            <td>{{tipo}}</td>
+        </tr>
+        <tr>
+            <td>Raça</td>
+            <td>{{raca}}</td>
+        </tr>
+        <tr>
+            <td>Editar</td>
+            <td><a href="animalEdit/{{_id}}">Editar </a></td>
+        </tr>
+        <tr>
+            <td>Excluir</td>
+            <td>
+                <input type="button" value="Excluir" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#modalDelete_{{_id}}">
+            </td>
+        </tr>
+    </tbody>
+</table>
+{{/each}}
