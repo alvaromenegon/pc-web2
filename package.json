@@ -1,10 +1,9 @@
 {
   "name": "aula-9",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -21,5 +20,14 @@
     "nodemon": "^2.0.15",
     "pg": "^8.7.3",
     "sequelize": "^6.18.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvaromenegon/pc-web2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alvaromenegon/pc-web2/issues"
+  },
+  "homepage": "https://github.com/alvaromenegon/pc-web2#readme",
+  "description": ""
 }
