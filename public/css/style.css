@@ -56,7 +56,7 @@ tr:nth-child(odd),th {
 table.hidden-md{
     display: table;
 }
-.show-md{
+.show-md, .table.show-md{
    display: none;
 }
 
@@ -68,8 +68,8 @@ table.hidden-md{
     .table.show-md{
         display: table;
     }
-    
-    .hidden-md{
+
+    .hidden-md, .table.hidden-md{
         display: none;
     }
 
